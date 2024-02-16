@@ -9,11 +9,11 @@ import Image from "next/image";
 
 const Header = () => {
   const [isMenuActive, setMenuActive] = useState(false);
-  const [windowSize, setWindowSize] = useState<[number, number]>([0, 0]);
+  const [windowSize, setWindowSize] = useState<number>(0);
 
   useEffect(() => {
     const handleWindowResize = () => {
-      setWindowSize([window.innerWidth, window.innerHeight]);
+      setWindowSize(window.innerWidth);
     };
 
     window.addEventListener("resize", handleWindowResize);
@@ -53,7 +53,7 @@ const Header = () => {
       </div>
       <div
         className={`header__menu ${
-          isMenuActive && windowSize[0] < 992 && "active"
+          isMenuActive && windowSize < 992 && "active"
         }`}
       >
         <div className="header__menu__item">Haqqımızda</div>
@@ -65,7 +65,7 @@ const Header = () => {
       </div>
       <button
         className={`header__menu__btn ${
-          isMenuActive && windowSize[0] < 992 && "active"
+          isMenuActive && windowSize < 992 && "active"
         }`}
         onClick={handleMenu}
       >
