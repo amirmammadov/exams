@@ -1,0 +1,27 @@
+@import "./base/reset";
+@import "./base/typography";
+@import "./utils/colors";
+@import "./utils/mixins";
+@import "./utils/variables";
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+html {
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: $gray-2;
+}
+
+::-webkit-scrollbar-thumb {
+  background: $gray;
+}

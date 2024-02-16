@@ -1,0 +1,13 @@
+@import "../style";
+
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 80px;
+  height: 100%;
+  padding: 0 10%;
+  @include flexbox($justify: space-between, $items: center);
+  background-color: $white;
+}
