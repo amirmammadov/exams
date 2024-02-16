@@ -1,0 +1,26 @@
+@import "../style";
+
+.section__title {
+  @include flexbox(
+    $direction: column,
+    $justify: center,
+    $items: center,
+    $gap: 20px
+  );
+
+  &__one {
+    @extend %item2;
+    color: $dark;
+  }
+
+  &__two {
+    @extend %logo;
+    color: $dark;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .section__title__two {
+    font-size: 32px;
+  }
+}

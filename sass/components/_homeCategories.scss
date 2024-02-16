@@ -1,0 +1,52 @@
+@import "../style";
+
+.home__categories {
+  padding: 120px 30%;
+  @include flexbox(
+    $direction: column,
+    $justify: center,
+    $items: center,
+    $gap: 40px
+  );
+
+  &__exams {
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    gap: 20px;
+    width: 100%;
+    justify-content: center;
+
+    &__item {
+      width: 160px;
+      border-radius: 12px;
+      box-shadow: $box-shadow;
+      background: $white-2;
+      padding: 38px 26px;
+      text-align: center;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .home__categories {
+    padding: 120px 20%;
+
+    &__exams {
+      grid-template-columns: repeat(3, auto);
+    }
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .home__categories {
+    padding: 120px 10%;
+
+    &__exams {
+      grid-template-columns: repeat(2, auto);
+    }
+  }
+}
