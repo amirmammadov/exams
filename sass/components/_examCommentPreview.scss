@@ -60,3 +60,33 @@
     }
   }
 }
+
+@media only screen and (max-width: 1240px) {
+  .preview {
+    gap: 80px;
+  }
+}
+
+@media only screen and (max-width: 1210px) {
+  .preview {
+    padding: 20px 30px;
+    gap: 50px;
+  }
+}
+
+@media only screen and (max-width: 880px) {
+  .preview {
+    gap: 30px;
+    justify-content: space-between;
+
+    &__all__item__progress {
+      display: none;
+    }
+  }
+}
+
+@media only screen and (max-width: 345px) {
+  .preview__total__stat {
+    display: none;
+  }
+}

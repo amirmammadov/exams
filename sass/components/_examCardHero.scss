@@ -24,7 +24,7 @@
     &__list {
       list-style: disc;
       list-style-position: inside;
-      line-height: 1.5;
+      line-height: 1.7;
       color: $white;
       font-size: 15px;
     }
@@ -47,8 +47,53 @@
   }
 
   &__img {
-    padding: 0 60px;
-    margin: auto 60px 0 60px;
+    padding: 0 10px;
+    margin: auto 10px 0 10px;
     height: 100%;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .exam__hero__content {
+    padding: 72px 40px;
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  .exam__hero__content {
+    padding: 72px 20px;
+
+    &__title {
+      font-size: 30px;
+    }
+  }
+  .exam__hero__img {
+    padding: 0 5px;
+    margin: auto 5px 0 5px;
+  }
+}
+
+@media only screen and (max-width: 810px) {
+  .exam__hero__img {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .exam__hero__content__title {
+    font-size: 25px;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .exam__hero__content__title {
+    font-size: 20px;
+    margin: 0 auto;
+  }
+  .exam__hero__content__list {
+    font-size: 14px;
+  }
+  .exam__hero__content__btn {
+    margin: 0 auto;
   }
 }

@@ -30,7 +30,7 @@ const ExamInfoGeneral = () => {
             height={20}
           />
           <div className="exam__info__general__detail__item__text">
-            22.05.2023 hazırlanıb
+            22.05.2023
           </div>
         </div>
       </div>

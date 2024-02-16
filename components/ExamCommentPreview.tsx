@@ -34,7 +34,7 @@ const ExamCommentPreview = () => {
       <div className="preview__all">
         {comments.map((comment) => {
           const emptyStars = 5 - comment.fiveStar;
-          const progress = (comment.participants / totalComments) * 100 * 6;
+          const progress = (comment.participants / totalComments) * 100 * 5;
 
           return (
             <div key={comment.id} className="preview__all__item">
