@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 import Header from "@/shared/Header";
+import Footer from "@/shared/Footer";
 
 export const metadata: Metadata = {
   title: "Exams Portal",
@@ -17,6 +18,7 @@ export default function RootLayout({
       <body>
         <Header />
         {children}
+        <Footer />
       </body>
     </html>
   );

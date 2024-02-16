@@ -12,8 +12,6 @@
   background-color: $white;
 
   &__logo {
-    @extend %logo;
-    color: $dark;
     text-decoration: none;
 
     &:hover {

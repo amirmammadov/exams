@@ -1,0 +1,139 @@
+@import "../style";
+
+.footer {
+  width: 100%;
+  height: auto;
+  padding: 40px 10% 20px 10%;
+  background-color: $gray;
+  @include flexbox(
+    $direction: column,
+    $justify: flex-start,
+    $items: flex-start,
+    $gap: 20px
+  );
+
+  &__top {
+    width: 100%;
+    @include flexbox($justify: space-between, $items: center);
+    margin-bottom: 20px;
+
+    &__links {
+      @include flexbox($justify: center, $items: center, $gap: 28px);
+
+      &__item {
+        @extend %footerItem;
+
+        &:hover {
+          cursor: pointer;
+          opacity: 0.9;
+        }
+      }
+
+      &__option {
+        background-color: $gray-2;
+        border: none;
+        outline: none;
+        padding: 8px 12px;
+        border-radius: 8px;
+      }
+    }
+  }
+
+  &__content {
+    @include flexbox(
+      $direction: column,
+      $justify: flex-start,
+      $items: flex-start,
+      $gap: 24px
+    );
+
+    &__item {
+      @include flexbox($justify: flex-start, $items: center, $gap: 12px);
+
+      &__img {
+        padding: 4px;
+        border-radius: 50%;
+        background-color: $gray-2;
+      }
+
+      &__text {
+        @extend %item2;
+        color: $dark;
+      }
+    }
+  }
+
+  &__social {
+    @include flexbox($justify: flex-start, $items: center, $gap: 12px);
+    margin-left: auto;
+    margin-top: 20px;
+
+    &__img {
+      padding: 4px;
+      border-radius: 50%;
+      background-color: $gray-2;
+    }
+  }
+
+  &__divider {
+    width: 1300px;
+    margin: 0 auto;
+    height: 1px;
+    background-color: $gray-2;
+  }
+
+  &__rights {
+    @extend %footer-rights;
+    color: $dark;
+    opacity: 0.9;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .footer {
+    padding: 40px 7% 20px 7%;
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  .footer {
+    padding: 40px 5% 20px 7%;
+  }
+}
+
+@media only screen and (max-width: 740px) {
+  .footer__top__links {
+    gap: 10px;
+
+    &__item {
+      font-size: 16px;
+    }
+
+    &__option {
+      display: none;
+    }
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .footer {
+    padding: 40px 2% 20px 2%;
+  }
+}
+
+@media only screen and (max-width: 470px) {
+  .footer__top__links {
+    display: none;
+  }
+
+  .footer__social {
+    margin-right: auto;
+    margin-left: initial;
+  }
+}
+
+@media only screen and (max-width: 300px) {
+  .footer__rights {
+    font-size: 12px;
+  }
+}

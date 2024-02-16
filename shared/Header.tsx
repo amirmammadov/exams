@@ -5,13 +5,11 @@ import { useState, useEffect } from "react";
 import "../sass/layout/_header.scss";
 
 import Link from "next/link";
+import Image from "next/image";
 
 const Header = () => {
   const [isMenuActive, setMenuActive] = useState(false);
-  const [windowSize, setWindowSize] = useState([
-    window.innerWidth,
-    window.innerHeight,
-  ]);
+  const [windowSize, setWindowSize] = useState<[number, number]>([0, 0]);
 
   useEffect(() => {
     const handleWindowResize = () => {
@@ -32,7 +30,7 @@ const Header = () => {
   return (
     <header className="header">
       <Link href="/" className="header__logo">
-        Logo
+        <Image src="/icons/logo.png" alt="logo" width={85} height={35} />
       </Link>
       <nav className="header__nav">
         <div className="header__nav__item">Haqqımızda</div>
