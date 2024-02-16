@@ -1,0 +1,148 @@
+@import "../style";
+
+.card {
+  border-radius: 12px;
+  background-color: $gray;
+  padding: 28px;
+  @include flexbox(
+    $direction: column,
+    $justify: flex-start,
+    $items: flex-start,
+    $gap: 20px
+  );
+
+  &__title {
+    @extend %cardTitle;
+    color: $dark;
+  }
+
+  &__stats {
+    width: 100%;
+    @include flexbox($justify: space-between, $items: center);
+
+    &__duration {
+      @include flexbox($justify: flex-start, $items: center, $gap: 12px);
+
+      &__amount {
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 28px;
+        letter-spacing: 0%;
+        color: $dark;
+        opacity: 0.8;
+      }
+    }
+
+    &__stars {
+      @include flexbox($justify: flex-start, $items: center, $gap: 8px);
+
+      &__all {
+        @include flexbox($justify: flex-start, $items: center, $gap: 2px);
+      }
+
+      &__text {
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 22px;
+        letter-spacing: 0%;
+        color: $dark;
+        opacity: 0.8;
+      }
+    }
+  }
+
+  &__questions {
+    width: 100%;
+    @include flexbox(
+      $direction: column,
+      $justify: flex-start,
+      $items: flex-start,
+      $gap: 12px
+    );
+
+    &__title {
+      @extend %item;
+      color: $dark;
+    }
+
+    &__list {
+      list-style-type: disc;
+      list-style-position: inside;
+
+      &__item {
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 28px;
+        letter-spacing: 0%;
+        color: $dark;
+        opacity: 0.8;
+      }
+    }
+  }
+
+  &__divider {
+    width: 100%;
+    height: 1px;
+    background-color: $gray-2;
+  }
+
+  &__keys {
+    @include flexbox($justify: flex-start, $items: flex-start, $gap: 12px);
+
+    &__item {
+      padding: 5px 16px;
+      border-radius: 12px;
+      background-color: $gray-2;
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 22px;
+      letter-spacing: 0%;
+      color: $dark;
+    }
+  }
+
+  &__btn {
+    width: 100%;
+    border: 1px solid $dark;
+    border-radius: 12px;
+    padding: 10px 20px;
+    background-color: transparent;
+    outline: none;
+    @extend %item;
+    color: $dark;
+
+    &:hover {
+      cursor: pointer;
+      opacity: 0.8;
+    }
+  }
+}
+
+@media only screen and (max-width: 1040px) {
+  .card__stats__stars {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  .card__keys {
+    gap: 5px;
+
+    &__item {
+      padding: 5px 10px;
+      font-size: 12px;
+    }
+  }
+}
+
+@media only screen and (max-width: 866px) {
+  .card__stats__stars {
+    display: flex;
+  }
+}
+
+@media only screen and (max-width: 620px) {
+  .card__stats__stars {
+    display: none;
+  }
+}

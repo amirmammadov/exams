@@ -50,3 +50,17 @@
     }
   }
 }
+
+@media only screen and (max-width: 400px) {
+  .home__categories {
+    padding: 120px 10%;
+
+    &__exams {
+      grid-template-columns: repeat(1, auto);
+
+      &__item {
+        width: 250px;
+      }
+    }
+  }
+}

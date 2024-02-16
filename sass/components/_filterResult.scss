@@ -1,0 +1,26 @@
+@import "../style";
+
+.filter__result {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  gap: 20px;
+  width: 100%;
+
+  &__more {
+    box-sizing: border-box;
+    border: 1px solid rgb(217, 217, 217);
+    border-radius: 12px;
+    padding: 10px 20px;
+    width: max-content;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+@media only screen and (max-width: 866px) {
+  .filter__result {
+    grid-template-columns: repeat(1, auto);
+  }
+}
