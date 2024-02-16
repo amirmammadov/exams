@@ -5,9 +5,70 @@
   top: 0;
   left: 0;
   right: 0;
-  width: 80px;
-  height: 100%;
+  height: 80px;
+  width: 100%;
   padding: 0 10%;
   @include flexbox($justify: space-between, $items: center);
   background-color: $white;
+
+  &__logo {
+    @extend %logo;
+    color: $dark;
+    text-decoration: none;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  &__nav {
+    @include flexbox($justify: center, $items: center, $gap: 28px);
+
+    &__item {
+      @extend %navItem;
+      color: $dark;
+
+      &:hover {
+        cursor: pointer;
+        opacity: 0.9;
+      }
+    }
+
+    &__option {
+      border: none;
+      outline: none;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+
+  &__btns {
+    @include flexbox($justify: center, $items: center, $gap: 12px);
+
+    &__signin,
+    &__signup {
+      padding: 10px 20px;
+      border: 1px solid $dark;
+      border-radius: 12px;
+      outline: none;
+      @extend %navItem;
+
+      &:hover {
+        cursor: pointer;
+        opacity: 0.9;
+      }
+    }
+
+    &__signin {
+      background-color: $white;
+      color: $dark;
+    }
+
+    &__signup {
+      background-color: $dark;
+      color: $white;
+    }
+  }
 }

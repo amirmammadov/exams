@@ -1,15 +1,24 @@
 import "../sass/layout/_header.scss";
 
+import Link from "next/link";
+
 const Header = () => {
   return (
     <header className="header">
-      <div className="header__logo">Logo</div>
+      <Link href="/" className="header__logo">
+        Logo
+      </Link>
       <nav className="header__nav">
         <div className="header__nav__item">Haqqımızda</div>
         <div className="header__nav__item">Kitablar</div>
         <div className="header__nav__item">İmtahanlar</div>
         <div className="header__nav__item">Bizimlə əlaqə</div>
-        <select name="lang" id="lang" autoComplete="off">
+        <select
+          name="lang"
+          id="lang"
+          autoComplete="off"
+          className="header__nav__option"
+        >
           <option value="AZ">AZ</option>
           <option value="EN">EN</option>
         </select>
