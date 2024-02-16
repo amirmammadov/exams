@@ -1,0 +1,54 @@
+@import "../style";
+
+.exam__hero {
+  width: 100%;
+  height: auto;
+  background-color: $dark;
+  border-radius: 12px;
+  @include flexbox($justify: space-between, $items: center);
+
+  &__content {
+    @include flexbox(
+      $direction: column,
+      $justify: flex-start,
+      $items: flex-start,
+      $gap: 20px
+    );
+    padding: 72px 60px;
+
+    &__title {
+      @extend %logo;
+      color: $white;
+    }
+
+    &__list {
+      list-style: disc;
+      list-style-position: inside;
+      line-height: 1.5;
+      color: $white;
+      font-size: 15px;
+    }
+
+    &__btn {
+      border-radius: 12px;
+      background-color: $white;
+      padding: 10px 20px;
+      border: none;
+      outline: none;
+      @extend %item;
+      color: $dark;
+      margin-top: 28px;
+
+      &:hover {
+        cursor: pointer;
+        opacity: 0.9;
+      }
+    }
+  }
+
+  &__img {
+    padding: 0 60px;
+    margin: auto 60px 0 60px;
+    height: 100%;
+  }
+}

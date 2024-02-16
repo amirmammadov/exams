@@ -1,0 +1,57 @@
+@import "../style";
+
+.exam__info__general {
+  flex: 1;
+  background-color: $gray;
+  box-shadow: $box-shadow;
+  border-radius: 12px;
+  padding: 28px;
+  @include flexbox(
+    $direction: column,
+    $justify: flex-start,
+    $items: flex-start,
+    $gap: 20px
+  );
+
+  &__title {
+    @extend %cardTitle;
+    color: $dark;
+  }
+
+  &__detail {
+    @include flexbox($justify: flex-start, $items: center, $gap: 40px);
+    width: 100%;
+    margin-bottom: 20px;
+
+    &__item {
+      @include flexbox($justify: flex-start, $items: center, $gap: 12px);
+
+      &__text {
+        @extend %item;
+        color: $dark;
+      }
+    }
+  }
+
+  &__questions {
+    @include flexbox(
+      $direction: column,
+      $justify: flex-start,
+      $items: flex-start,
+      $gap: 20px
+    );
+
+    &__title {
+      @extend %cardTitle;
+      color: $dark;
+    }
+
+    ul {
+      color: $dark;
+      opacity: 0.8;
+      list-style: disc;
+      line-height: 1.5;
+      list-style-position: inside;
+    }
+  }
+}

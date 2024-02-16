@@ -1,0 +1,50 @@
+@import "../style";
+
+.exam {
+  padding: 0 10%;
+  max-width: 100vw;
+  min-height: 100vh;
+
+  &__info {
+    width: 100%;
+    padding: 100px 0;
+    display: flex;
+    gap: 20px;
+    height: auto;
+  }
+
+  &__comment {
+    @include flexbox(
+      $direction: column,
+      $justify: flex-start,
+      $items: center,
+      $gap: 60px
+    );
+    margin-bottom: 100px;
+
+    &__title {
+      @extend %logo;
+      color: $dark;
+    }
+
+    &__total {
+      display: grid;
+      grid-template-columns: repeat(3, auto);
+      gap: 20px;
+    }
+
+    &__btn {
+      box-sizing: border-box;
+      border: 1px solid $gray-2;
+      border-radius: 12px;
+      padding: 10px 20px;
+      background-color: transparent;
+      @extend %item;
+
+      &:hover {
+        cursor: pointer;
+        opacity: 0.8;
+      }
+    }
+  }
+}

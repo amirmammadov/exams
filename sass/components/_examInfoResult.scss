@@ -1,0 +1,78 @@
+@import "../style";
+
+.exam__info__result {
+  background-color: $gray;
+  box-shadow: $box-shadow;
+  border-radius: 12px;
+  padding: 28px;
+  @include flexbox(
+    $direction: column,
+    $justify: flex-start,
+    $items: flex-start,
+    $gap: 25px
+  );
+
+  &__title {
+    @extend %cardTitle;
+    color: $dark;
+  }
+
+  &__students {
+    @include flexbox(
+      $direction: column,
+      $justify: flex-start,
+      $items: flex-start,
+      $gap: 20px
+    );
+
+    &__item {
+      @include flexbox(
+        $justify: space-between,
+        $items: flex-start,
+        $gap: 120px
+      );
+      width: 100%;
+
+      &__left,
+      &__right {
+        @include flexbox($justify: flex-start, $items: center);
+      }
+
+      &__left {
+        gap: 12px;
+
+        &__name {
+          @extend %item;
+          color: $dark;
+        }
+
+        &__position {
+          background-color: $gray-2;
+          border-radius: 50%;
+          padding: 12px 16px;
+          color: $dark;
+          font-weight: bold;
+        }
+      }
+
+      &__right {
+        gap: 6px;
+
+        &__mark {
+          @extend %footer-rights;
+          color: $dark;
+        }
+
+        &__duration {
+          @extend %footer-rights;
+          color: $dark;
+          font-size: 12px;
+        }
+
+        &__link {
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}

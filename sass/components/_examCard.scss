@@ -110,6 +110,8 @@
     outline: none;
     @extend %item;
     color: $dark;
+    text-decoration: none;
+    text-align: center;
 
     &:hover {
       cursor: pointer;

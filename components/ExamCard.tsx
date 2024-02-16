@@ -1,6 +1,7 @@
 import "../sass/components/_examCard.scss";
 
 import Image from "next/image";
+import Link from "next/link";
 
 const ExamCard = () => {
   return (
@@ -66,7 +67,9 @@ const ExamCard = () => {
         <div className="card__keys__item">İbtidai sinif</div>
         <div className="card__keys__item">3-cü sinif</div>
       </div>
-      <button className="card__btn">1 AZN- indi al</button>
+      <Link href="/exam/1" className="card__btn">
+        1 AZN- indi al
+      </Link>
     </div>
   );
 };

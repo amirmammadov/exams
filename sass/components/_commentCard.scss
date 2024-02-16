@@ -1,0 +1,36 @@
+@import "../style";
+
+.comment__card {
+  background-color: $gray;
+  border-radius: 12px;
+  padding: 20px;
+
+  @include flexbox(
+    $direction: column,
+    $justify: flex-start,
+    $items: flex-start,
+    $gap: 16px
+  );
+
+  &__person {
+    @extend %item;
+    color: $dark;
+  }
+
+  &__stars {
+    @include flexbox($justify: flex-start, $items: center, $gap: 2px);
+
+    &__date {
+      @extend %footer-rights;
+      color: $dark;
+      opacity: 0.8;
+      margin-left: 10px;
+    }
+  }
+
+  &__desc {
+    @extend %footer-rights;
+    color: $dark;
+    opacity: 0.8;
+  }
+}

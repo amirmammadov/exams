@@ -1,0 +1,62 @@
+@import "../style";
+
+.preview {
+  border-radius: 12px;
+  box-shadow: $box-shadow;
+  background-color: $gray;
+  padding: 40px 60px;
+  width: 100%;
+  @include flexbox($justify: flex-start, $items: center, $gap: 100px);
+
+  &__total {
+    @include flexbox(
+      $direction: column,
+      $justify: flex-start,
+      $items: flex-start,
+      $gap: 30px
+    );
+
+    &__amount {
+      font-size: 64px;
+      font-weight: 500;
+      line-height: 78px;
+      letter-spacing: 0%;
+      color: $dark;
+    }
+
+    &__stat {
+      @include flexbox($justify: flex-start, $items: center, $gap: 12px);
+
+      &__text {
+        @extend %item2;
+        color: $dark;
+      }
+    }
+  }
+
+  &__all {
+    @include flexbox(
+      $direction: column,
+      $justify: flex-start,
+      $items: flex-start,
+      $gap: 16px
+    );
+
+    &__item {
+      @include flexbox($justify: flex-start, $items: center, $gap: 10px);
+
+      &__all {
+        @extend %footer-rights;
+        color: $dark;
+        font-weight: 500;
+      }
+
+      &__progress {
+        border-radius: 100px;
+        background-color: $gray-2;
+        height: 8px;
+        margin-left: 10px;
+      }
+    }
+  }
+}
