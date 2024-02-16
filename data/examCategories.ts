@@ -14,6 +14,7 @@ export const examCategories = [
   {
     id: 4,
     title: "İbtidai sinif",
+    classes: ["2-ci sinif", "3-cü sinif", "4-cü sinif"],
   },
   {
     id: 5,

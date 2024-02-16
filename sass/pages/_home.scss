@@ -1,0 +1,12 @@
+@import "../style";
+
+.filterExams {
+  @include flexbox($direction: column, $justify: flex-start, $items: center);
+  padding: 0 10%;
+
+  &__content {
+    width: 100%;
+    @include flexbox($justify: space-between, $items: flex-start, $gap: 40px);
+    padding: 48px 0;
+  }
+}
