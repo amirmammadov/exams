@@ -3,10 +3,10 @@ import "../sass/components/_examCard.scss";
 import Image from "next/image";
 import Link from "next/link";
 
-const ExamCard = () => {
+const ExamCard = ({ title }: { title: string }) => {
   return (
     <div className="card">
-      <div className="card__title">3-cü sinif imtahanı</div>
+      <div className="card__title">{title}</div>
       <div className="card__stats">
         <div className="card__stats__duration">
           <Image

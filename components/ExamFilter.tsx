@@ -1,10 +1,12 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 
 import "../sass/components/_examFilter.scss";
 
 import { examCategories } from "@/data/examCategories";
+
+import { useStore } from "../state/index";
 
 interface Exam {
   id: number;
@@ -13,15 +15,55 @@ interface Exam {
 }
 
 const ExamFilter = () => {
-  const [activeExam, setSctiveExam] = useState(examCategories[0]);
+  const [activeExam, setActiveExam] = useState(examCategories[0]);
   const [activeClass, setActiveClass] = useState("");
+
+  const setClassType = useStore((state) => state.setClassType);
+  const setExamType = useStore((state) => state.setExamType);
+
+  const ref = useRef(false);
+
+  useEffect(() => {
+    if (ref.current === false) {
+      if (activeExam.classes !== undefined) {
+        setActiveClass(() => activeExam.classes[0]);
+      }
+    }
+
+    if (activeExam.title === "İbtidai sinif") {
+      setExamType("foundation");
+      setClassType("two");
+    } else {
+      setExamType(activeExam.title);
+      setClassType("");
+    }
+
+    return () => {
+      ref.current = true;
+    };
+  }, [activeExam, setClassType, setExamType]);
 
   const handleSwitch = (exam: Exam) => {
     if (activeExam.classes !== undefined) {
-      setActiveClass(activeExam.classes[0]);
+      setActiveClass(() => activeExam.classes[0]);
     }
 
-    setSctiveExam(exam);
+    setActiveExam(() => exam);
+  };
+
+  const hanldeClassType = (classValue: string) => {
+    setActiveClass(() => classValue);
+    let type = "";
+
+    if (classValue.includes("2")) {
+      type = "two";
+    } else if (classValue.includes("3")) {
+      type = "three";
+    } else {
+      type = "four";
+    }
+
+    setClassType(type);
   };
 
   return (
@@ -51,7 +93,7 @@ const ExamFilter = () => {
                 className={`filter__extra__classes__item ${
                   activeClass === classValue && "active"
                 }`}
-                onClick={() => setActiveClass(classValue)}
+                onClick={() => hanldeClassType(classValue)}
               >
                 {classValue}
               </button>

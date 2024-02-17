@@ -1,7 +1,8 @@
 export const examCategories = [
   {
     id: 1,
-    title: "Buraxılış",
+    title: "İbtidai sinif",
+    classes: ["2-ci sinif", "3-cü sinif", "4-cü sinif"],
   },
   {
     id: 2,
@@ -13,8 +14,7 @@ export const examCategories = [
   },
   {
     id: 4,
-    title: "İbtidai sinif",
-    classes: ["2-ci sinif", "3-cü sinif", "4-cü sinif"],
+    title: "Buraxılış",
   },
   {
     id: 5,
@@ -37,7 +37,7 @@ export const examCategories = [
 export const foundationTwo = [
   {
     id: 1,
-    title: "2-cü sinif imtahanı",
+    title: "2-ci sinif imtahanı",
     duration: 45,
     commentCount: 2,
     commentStar: 4,
@@ -50,7 +50,7 @@ export const foundationTwo = [
   },
   {
     id: 2,
-    title: "2-cü sinif imtahanı",
+    title: "2-ci sinif imtahanı",
     duration: 45,
     commentCount: 2,
     commentStar: 4,
@@ -63,7 +63,7 @@ export const foundationTwo = [
   },
   {
     id: 3,
-    title: "2-cü sinif imtahanı",
+    title: "2-ci sinif imtahanı",
     duration: 45,
     commentCount: 2,
     commentStar: 4,
@@ -76,7 +76,7 @@ export const foundationTwo = [
   },
   {
     id: 4,
-    title: "2-cü sinif imtahanı",
+    title: "2-ci sinif imtahanı",
     duration: 45,
     commentCount: 2,
     commentStar: 4,
@@ -89,7 +89,7 @@ export const foundationTwo = [
   },
   {
     id: 5,
-    title: "2-cü sinif imtahanı",
+    title: "2-ci sinif imtahanı",
     duration: 45,
     commentCount: 2,
     commentStar: 4,
@@ -102,7 +102,7 @@ export const foundationTwo = [
   },
   {
     id: 6,
-    title: "2-cü sinif imtahanı",
+    title: "2-ci sinif imtahanı",
     duration: 45,
     commentCount: 2,
     commentStar: 4,
