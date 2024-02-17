@@ -25,8 +25,6 @@ const FilterResult = () => {
   const classType = useStore((state) => state.classType);
   const examType = useStore((state) => state.examType);
 
-  console.log({ classType, examType });
-
   const fetcher = async (url: string) => {
     try {
       const response = await axios.get(url);

@@ -1,4 +1,4 @@
-import "../sass/pages/_home.scss";
+import "../../sass/pages/_home.scss";
 
 import HomeHero from "@/components/HomeHero";
 import HomeCategories from "@/components/HomeCategories";

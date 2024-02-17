@@ -1,4 +1,4 @@
-import "../../../sass/pages/_examItem.scss";
+import "../../../../sass/pages/_examItem.scss";
 
 import ExamCardHero from "@/components/ExamCardHero";
 import ExamInfoGeneral from "@/components/ExamInfoGeneral";

@@ -4,12 +4,18 @@ import { useState, useEffect } from "react";
 
 import "../sass/layout/_header.scss";
 
+import { Trans } from "react-i18next/TransWithoutContext";
+import { languages } from "../i18n/settings";
+import { useTranslation } from "@/i18n/client";
+
 import Link from "next/link";
 import Image from "next/image";
 
-const Header = () => {
+const Header = ({ lng }: { lng: string }) => {
   const [isMenuActive, setMenuActive] = useState(false);
   const [windowSize, setWindowSize] = useState<number>(0);
+
+  const { t } = useTranslation(lng);
 
   useEffect(() => {
     const handleWindowResize = () => {
@@ -33,35 +39,64 @@ const Header = () => {
         <Image src="/icons/logo.png" alt="logo" width={85} height={35} />
       </Link>
       <nav className="header__nav">
-        <div className="header__nav__item">Haqqımızda</div>
-        <div className="header__nav__item">Kitablar</div>
-        <div className="header__nav__item">İmtahanlar</div>
-        <div className="header__nav__item">Bizimlə əlaqə</div>
-        <select
-          name="lang"
-          id="lang"
-          autoComplete="off"
-          className="header__nav__option"
-        >
-          <option value="AZ">AZ</option>
-          <option value="EN">EN</option>
-        </select>
+        <div className="header__nav__item">{t("navbar.link1")}</div>
+        <div className="header__nav__item">{t("navbar.link2")}</div>
+        <div className="header__nav__item">{t("navbar.link3")}</div>
+        <div className="header__nav__item">{t("navbar.link4")}</div>
+        <div className="lang__switcher">
+          <Trans i18nKey="languageSwitcher" t={t}>
+            <span className="lang__switcher__item active">
+              {lng === "az" ? "AZ" : "EN"}
+            </span>{" "}
+          </Trans>
+          {languages
+            .filter((l) => lng !== l)
+            .map((l, index) => {
+              return (
+                <span key={l} className="lang__switcher__item">
+                  {index > 0 && " or "}
+                  <Link href={`/${l}`} className="lang__switcher__item__link">
+                    {l === "az" ? "AZ" : "EN"}
+                  </Link>
+                </span>
+              );
+            })}
+        </div>
       </nav>
       <div className="header__btns">
-        <button className="header__btns__signin">Daxil Ol</button>
-        <button className="header__btns__signup">Qeydiyyat</button>
+        <button className="header__btns__signin">{t("navbar.link5")}</button>
+        <button className="header__btns__signup">{t("navbar.link6")}</button>
       </div>
       <div
         className={`header__menu ${
           isMenuActive && windowSize < 992 && "active"
         }`}
       >
-        <div className="header__menu__item">Haqqımızda</div>
-        <div className="header__menu__item">Kitablar</div>
-        <div className="header__menu__item">İmtahanlar</div>
-        <div className="header__menu__item">Bizimlə əlaqə</div>
-        <div className="header__menu__item">Daxil Ol</div>
-        <div className="header__menu__item">Qeydiyyat</div>
+        <div className="header__menu__item">{t("navbar.link1")}</div>
+        <div className="header__menu__item">{t("navbar.link2")}</div>
+        <div className="header__menu__item">{t("navbar.link3")}</div>
+        <div className="header__menu__item">{t("navbar.link4")}</div>
+        <div className="header__menu__item">{t("navbar.link5")}</div>
+        <div className="header__menu__item">{t("navbar.link6")}</div>
+        <div className="lang__switcher">
+          <Trans i18nKey="languageSwitcher" t={t}>
+            <span className="lang__switcher__item active">
+              {lng === "az" ? "AZ" : "EN"}
+            </span>{" "}
+          </Trans>
+          {languages
+            .filter((l) => lng !== l)
+            .map((l, index) => {
+              return (
+                <span key={l} className="lang__switcher__item">
+                  {index > 0 && " or "}
+                  <Link href={`/${l}`} className="lang__switcher__item__link">
+                    {l === "az" ? "AZ" : "EN"}
+                  </Link>
+                </span>
+              );
+            })}
+        </div>
       </div>
       <button
         className={`header__menu__btn ${
